@@ -1,0 +1,305 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Baker & Co. Light Mode Colors */
+  --background: oklch(0.99 0.003 85); /* Soft, neutral creamy off-white - easy on the eyes */
+  --foreground: oklch(0.15 0 0); /* #1A1A1A - Main text */
+  
+  --card: oklch(1 0 0); /* Pure white - clean contrast against background */
+  --card-foreground: oklch(0.15 0 0); /* #1A1A1A */
+  
+  --popover: oklch(1 0 0); /* Pure white - clean popover surface */
+  --popover-foreground: oklch(0.15 0 0); /* #1A1A1A */
+  
+  --primary: oklch(0.87 0.08 95); /* #E8D68A - Baker & Co. Gold */
+  --primary-foreground: oklch(0.15 0 0); /* Dark text on gold */
+  
+  --secondary: oklch(0.3 0.04 255); /* #2C3E50 - Dark blue-gray */
+  --secondary-foreground: oklch(1 0 0); /* White text on dark */
+  
+  --muted: oklch(0.96 0.002 85); /* Soft muted background - slightly warmer than border */
+  --muted-foreground: oklch(0.5 0.01 255); /* #6B7280 - Secondary text */
+  
+  --accent: oklch(0.87 0.08 95); /* #E8D68A - Gold accent */
+  --accent-foreground: oklch(0.15 0 0); /* Dark text */
+  
+  --destructive: oklch(0.55 0.15 15); /* Softer rose-red */
+  --destructive-foreground: oklch(1 0 0); /* White text */
+  
+  --border: oklch(0.93 0.002 85); /* Soft, subtle border - slightly warm */
+  --input: oklch(0.95 0.002 85); /* Soft input background */
+  --ring: oklch(0.87 0.08 95); /* Gold ring */
+  
+  --chart-1: oklch(0.87 0.08 95); /* Primary gold */
+  --chart-2: oklch(0.58 0.13 160); /* Muted emerald (Sales) */
+  --chart-3: oklch(0.68 0.14 65); /* Softer amber */
+  --chart-4: oklch(0.58 0.15 250); /* Muted slate-blue (Advisor) */
+  --chart-5: oklch(0.52 0.14 330); /* Soft purple-mauve (Admin) */
+  
+  --radius: 0.65rem;
+  
+  --sidebar: oklch(0.99 0.003 85); /* Soft, neutral creamy off-white - matches background */
+  --sidebar-foreground: oklch(0.15 0 0); /* #1A1A1A */
+  --sidebar-primary: oklch(0.87 0.08 95); /* Gold */
+  --sidebar-primary-foreground: oklch(0.15 0 0); /* Dark text */
+  --sidebar-accent: oklch(0.97 0.002 85); /* Subtle warm accent for hover states */
+  --sidebar-accent-foreground: oklch(0.15 0 0); /* Dark text */
+  --sidebar-border: oklch(0.93 0.002 85); /* Soft, subtle border - matches main border */
+  --sidebar-ring: oklch(0.87 0.08 95); /* Gold */
+  
+  /* Additional Baker & Co. specific colors - Professional & Subtle */
+  --success: oklch(0.55 0.12 150); /* Muted teal-green */
+  --warning: oklch(0.68 0.14 65); /* Softer amber (good for telecaller) */
+  --error: oklch(0.55 0.15 15); /* Professional rose-red */
+  --info: oklch(0.58 0.15 250); /* Muted slate-blue */
+  
+  /* Role-specific professional colors */
+  --role-admin: oklch(0.52 0.14 330); /* Soft purple-mauve */
+  --role-manager: oklch(0.87 0.08 95); /* Gold (primary) */
+  --role-sales: oklch(0.58 0.13 160); /* Muted emerald */
+  --role-advisor: oklch(0.58 0.15 250); /* Soft slate-blue */
+  --role-telecaller: oklch(0.68 0.14 65); /* Amber-gold */
+  --role-processing: oklch(0.55 0.12 180); /* Muted teal */
+}
+
+.dark {
+  /* Baker & Co. Dark Mode Colors */
+  --background: oklch(0.22 0 0); /* #2D2D2D - Charcoal background */
+  --foreground: oklch(0.99 0 0); /* #F9FAFB - Light text */
+  
+  --card: oklch(0.27 0 0); /* #3A3A3A - Surface */
+  --card-foreground: oklch(0.99 0 0); /* #F9FAFB */
+  
+  --popover: oklch(0.27 0 0); /* #3A3A3A */
+  --popover-foreground: oklch(0.99 0 0); /* #F9FAFB */
+  
+  --primary: oklch(0.87 0.08 95); /* #E8D68A - Baker & Co. Gold (same) */
+  --primary-foreground: oklch(0.22 0 0); /* Dark text on gold */
+  
+  --secondary: oklch(0.92 0 0); /* #E5E7EB - Light gray for dark mode */
+  --secondary-foreground: oklch(0.22 0 0); /* Dark text on light */
+  
+  --muted: oklch(0.31 0 0); /* #454545 - Surface hover */
+  --muted-foreground: oklch(0.84 0 0); /* #D1D5DB - Secondary text */
+  
+  --accent: oklch(0.87 0.08 95); /* #E8D68A - Gold accent */
+  --accent-foreground: oklch(0.22 0 0); /* Dark text */
+  
+  --destructive: oklch(0.62 0.14 15); /* Softer rose in dark mode */
+  --destructive-foreground: oklch(0.99 0 0); /* White text */
+  
+  --border: oklch(0.35 0 0); /* #4B5563 */
+  --input: oklch(0.35 0 0); /* #4B5563 */
+  --ring: oklch(0.87 0.08 95); /* Gold ring */
+  
+  --chart-1: oklch(0.87 0.08 95); /* Primary gold */
+  --chart-2: oklch(0.68 0.12 165); /* Lighter emerald (Sales - dark mode) */
+  --chart-3: oklch(0.75 0.13 70); /* Softer amber (dark mode) */
+  --chart-4: oklch(0.68 0.14 255); /* Lighter slate-blue (Advisor - dark mode) */
+  --chart-5: oklch(0.62 0.13 330); /* Lighter purple-mauve (Admin - dark mode) */
+  
+  --sidebar: oklch(0.22 0 0); /* #2D2D2D */
+  --sidebar-foreground: oklch(0.99 0 0); /* #F9FAFB */
+  --sidebar-primary: oklch(0.87 0.08 95); /* Gold */
+  --sidebar-primary-foreground: oklch(0.22 0 0); /* Dark text */
+  --sidebar-accent: oklch(0.27 0 0); /* #3A3A3A */
+  --sidebar-accent-foreground: oklch(0.99 0 0); /* Light text */
+  --sidebar-border: oklch(0.35 0 0); /* #4B5563 */
+  --sidebar-ring: oklch(0.87 0.08 95); /* Gold */
+  
+  /* Additional Baker & Co. specific colors - Professional & Subtle (Dark Mode) */
+  --success: oklch(0.65 0.12 155); /* Muted teal-green */
+  --warning: oklch(0.75 0.13 70); /* Softer amber */
+  --error: oklch(0.62 0.14 15); /* Professional rose-red */
+  --info: oklch(0.68 0.14 255); /* Muted slate-blue */
+  
+  /* Role-specific professional colors (Dark Mode) */
+  --role-admin: oklch(0.62 0.13 330); /* Lighter purple-mauve for dark */
+  --role-manager: oklch(0.87 0.08 95); /* Gold (primary) */
+  --role-sales: oklch(0.68 0.12 165); /* Lighter emerald for dark */
+  --role-advisor: oklch(0.68 0.14 255); /* Lighter slate-blue for dark */
+  --role-telecaller: oklch(0.75 0.13 70); /* Lighter amber-gold for dark */
+  --role-processing: oklch(0.65 0.11 185); /* Lighter teal for dark */
+}
+
+@theme inline {
+  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Additional theme colors */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+  --color-info: var(--info);
+  
+  /* Role-specific colors */
+  --color-role-admin: var(--role-admin);
+  --color-role-manager: var(--role-manager);
+  --color-role-sales: var(--role-sales);
+  --color-role-advisor: var(--role-advisor);
+  --color-role-telecaller: var(--role-telecaller);
+  --color-role-processing: var(--role-processing);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Custom Scrollbar Styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.87 0.08 95 / 0.4) transparent;
+  }
+  
+  .dark * {
+    scrollbar-color: oklch(0.87 0.08 95 / 0.5) transparent;
+  }
+  
+  /* Webkit Scrollbar Styling (Chrome, Safari, Edge) */
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background: oklch(0.87 0.08 95 / 0.4);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    transition: all 0.3s ease;
+  }
+  
+  *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.87 0.08 95 / 0.6);
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  
+  .dark *::-webkit-scrollbar-thumb {
+    background: oklch(0.87 0.08 95 / 0.5);
+  }
+  
+  .dark *::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.87 0.08 95 / 0.7);
+  }
+  
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  * {
+    scroll-behavior: smooth;
+  }
+  
+  /* Select Component Text Truncation Fix */
+  [data-slot="select-value"] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    max-width: 100%;
+  }
+  
+  [data-slot="select-trigger"] {
+    overflow: hidden;
+  }
+  
+  [data-slot="select-trigger"] > * {
+    min-width: 0;
+  }
+
+  /* Enhanced Toast Animations */
+  @keyframes toast-slide-in {
+    from {
+      transform: translateX(calc(100% + 2rem)) scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes toast-slide-out {
+    from {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+    to {
+      transform: translateX(calc(100% + 2rem)) scale(0.95);
+      opacity: 0;
+    }
+  }
+
+  /* Apply animations to toast */
+  [data-radix-toast-viewport] > * {
+    animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-radix-toast-viewport] > [data-state="open"] {
+    animation: toast-slide-in 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  [data-radix-toast-viewport] > [data-state="closed"] {
+    animation: toast-slide-out 0.3s cubic-bezier(0.4, 0, 1, 1);
+  }
+
+  /* Smooth hover effect on toast */
+  [data-radix-toast-viewport] > * {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  [data-radix-toast-viewport] > *:hover {
+    transform: translateX(-4px) scale(1.02);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+}

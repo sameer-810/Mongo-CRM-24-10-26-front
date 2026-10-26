@@ -1,0 +1,209 @@
+---
+alwaysApply: true
+---
+
+## 👥 ROLES (DO NOT MODIFY)
+
+Roles (highest → lowest):
+
+1. admin
+2. manager
+3. advisor
+4. telecaller
+5. processing
+
+Rules:
+
+- Do NOT rename roles
+- Do NOT add roles
+- Do NOT change hierarchy values
+- Do NOT assume role power — always check helpers
+
+---
+
+## 📋 LEAD MANAGEMENT RULES
+
+- Lead creation & bulk upload:
+  - Admin, Manager only
+- Lead deletion:
+  - Admin only
+- Lead editing & viewing:
+  - Admin & Manager → all leads
+  - Others → assigned leads only
+
+Any new lead feature MUST:
+
+- Accept `role` and `isAssignedToUser`
+- Use existing permission helpers
+- Never bypass access checks
+
+---
+
+## 🔁 LEAD ASSIGNMENT RULES
+
+- Assignment MUST follow `ASSIGNABLE_ROLES`
+- Never allow cross-role assignment outside defined mapping
+- All roles may reassign their OWN leads
+- Admin/Manager control global assignment
+
+✅ Only bulk uploaded leads can auto-assign
+❌ Never silently reassign
+✅ Always validate via `canAssignToRole`
+
+---
+
+## 🔄 STATUS TRANSITION RULES (CRITICAL)
+
+- Status transitions MUST strictly follow `STATUS_TRANSITIONS`
+- UI and backend must BOTH enforce transitions
+
+Rules:
+
+- Use `canTransitionToStatus` before updating status
+- Use `getAllowedStatusTransitions` to render UI options
+
+❌ No inferred transitions
+❌ No automatic forward/backward movement
+❌ No role-based assumptions
+
+---
+
+## 📞 ACTIVITY & COMMUNICATION RULES
+
+Activity types include:
+
+- calls
+- whatsapp
+- notes
+- reminders
+- documents
+- **email** ✅ (NEW)
+
+Rules:
+
+- Admin & Manager → full access
+- Other roles → assigned leads only
+- Any new activity must follow same permission structure
+
+---
+
+## 🔗 ACTIVITY SHARING RULES (UPDATED)
+
+- Activity sharing MUST be prompted during lead assignment
+- Applies to ALL roles
+- Supported shareable activities:
+
+  - calls
+  - whatsapp
+  - notes
+  - reminders
+  - documents
+  - **email**
+
+- Default sharing behavior must respect
+  `DEFAULT_SHARING_PREFERENCES`
+
+❌ Never auto-share without prompt
+❌ Never exclude email from sharing logic
+
+---
+
+## 📄 DOCUMENT RULES
+
+- Upload:
+  - Assigned user OR admin/manager
+- Verify:
+  - admin, manager, processing
+- Delete:
+  - admin, manager only
+
+Document permissions MUST NOT be relaxed.
+
+---
+
+## 📤 EXPORT RULES
+
+- Export leads:
+  - All roles
+- Export reports:
+  - admin, manager only
+
+Export logic MUST still respect data visibility rules.
+
+---
+
+## 👤 USER MANAGEMENT RULES
+
+- View users:
+  - admin, manager
+- Create / Edit / Delete / Role change / Deactivate:
+  - admin only
+
+Managers MUST NOT gain edit or role-changing power.
+
+---
+
+## 📊 DASHBOARD & ANALYTICS RULES
+
+- Full analytics & team metrics:
+  - admin, manager
+- Personal metrics:
+  - all roles
+
+Never expose team or global metrics to lower roles.
+
+---
+
+## ⚙️ SETTINGS RULES
+
+- Access settings:
+  - admin only
+- Modify settings:
+  - admin only
+
+Settings access must be blocked in both UI and backend.
+
+---
+
+## 🧭 NAVIGATION RULES
+
+- Navigation visibility MUST follow `NAVIGATION_PERMISSIONS`
+- Hidden routes MUST still be protected server-side
+
+❌ Never rely on frontend-only protection
+
+---
+
+## 🧪 SAFE CHANGE GUARANTEES
+
+Allowed:
+
+- Refactoring without behavior change
+- Adding NEW helpers without removing old ones
+
+Forbidden:
+
+- Removing exports
+- Changing function signatures
+- Changing return types
+- Changing role behavior without explicit instruction
+
+If behavior change is REQUIRED:
+➡️ STOP and ASK.
+
+---
+
+## 🤖 CURSOR / AI BEHAVIOR RULES
+
+- Be conservative
+- Preserve business intent
+- Never “simplify” permission logic
+- Never optimize by removing checks
+- Never assume missing rules
+
+This CRM permission system is BUSINESS-CRITICAL.
+
+Stability > Performance  
+Correctness > Cleverness
+
+# ============================================================================

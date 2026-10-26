@@ -1,0 +1,31 @@
+import { PageHeaderSkeleton } from "./page-header-skeleton"
+import { StatsCardSkeleton } from "./stats-card-skeleton"
+import { SectionCardSkeleton } from "./section-card-skeleton"
+
+export function ReportsSkeleton() {
+  return (
+    <div className="space-y-8 p-6 md:p-8 max-w-[1600px] mx-auto">
+      <PageHeaderSkeleton />
+      
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {[...Array(4)].map((_, i) => (
+          <StatsCardSkeleton key={i} />
+        ))}
+      </div>
+      
+      <div className="grid gap-6 lg:grid-cols-2">
+        <SectionCardSkeleton showChart chartHeight={280} />
+        <SectionCardSkeleton showChart chartHeight={280} />
+        <SectionCardSkeleton showChart chartHeight={280} />
+        <SectionCardSkeleton showChart chartHeight={280} />
+      </div>
+      
+      <SectionCardSkeleton rows={6} />
+      
+      <div className="grid gap-6 lg:grid-cols-2">
+        <SectionCardSkeleton rows={3} />
+        <SectionCardSkeleton rows={4} />
+      </div>
+    </div>
+  )
+}
