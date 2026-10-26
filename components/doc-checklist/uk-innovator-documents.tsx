@@ -24,7 +24,7 @@ export const UK_INNOVATOR_CHECKLIST: ChecklistTemplate = {
         },
         {
           id: "uk-innovator-email",
-          label: "Generated Email Address with a password (Bakerandco@123)",
+          label: "Generated Email Address with its password (share the password privately)",
         },
       ],
     },

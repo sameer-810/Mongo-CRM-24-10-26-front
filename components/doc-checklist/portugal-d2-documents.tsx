@@ -19,7 +19,7 @@ export const PORTUGAL_D2_CHECKLIST: ChecklistTemplate = {
         { id: "portugal-d2-national-id", label: "Copy of National ID (if available)" },
         {
           id: "portugal-d2-email",
-          label: "Generated Email Address with a password (Bakerandco@123)",
+          label: "Generated Email Address with its password (share the password privately)",
         },
       ],
     },
