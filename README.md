@@ -45,6 +45,22 @@ Next.js 15 (App Router), TypeScript, Tailwind CSS, Radix UI, NextAuth.js, Rechar
 - **Manager** – Leads, reports, stages
 - **Advisor / Telecaller / Processing** – Role-specific dashboards and leads
 
+## Public Website
+
+Visitors land on a public marketing site; **Sign in** goes to `/login` and **Sign up** to `/signup`.
+
+| Route | Page |
+| ----- | ---- |
+| `/` | Home |
+| `/about` | About us |
+| `/services` | Services |
+| `/how-it-works` | Lead journey, stages and role access |
+| `/user-guide` | Step-by-step guide with screenshots (`public/guide/`) |
+| `/signup` | How to get an account |
+| `/privacy-policy`, `/terms-and-conditions` | Legal pages |
+
+Pages live in `app/(site)/`, shared parts in `components/site/`, and the contact email, nav and public route list in `lib/site.ts`.
+
 ## Project Layout
 
 - `app/` – Routes (dashboard, leads, calls, documents, etc.)

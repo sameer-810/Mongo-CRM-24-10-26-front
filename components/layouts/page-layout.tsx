@@ -8,6 +8,7 @@ import { useAuth } from "@/contexts/auth-context";
 import { Header } from "@/components/dashboard/header";
 import { Sidebar } from "@/components/dashboard/sidebar";
 import { canAccessRoute, getDefaultRoute } from "@/lib/rbac";
+import { isSitePath } from "@/lib/site";
 import { Card } from "@/components/ui/card";
 import { Shield, AlertCircle } from "lucide-react";
 
@@ -25,7 +26,7 @@ export function PageLayout({ children }: PageLayoutProps) {
   useEffect(() => {
     // Don't redirect if we're on a public route
     const publicRoutes = ["/login", "/register", "/reset-password"];
-    const isPublicRoute = pathname && publicRoutes.some((route) => pathname.startsWith(route));
+    const isPublicRoute = isSitePath(pathname) || (pathname && publicRoutes.some((route) => pathname.startsWith(route)));
     
     if (isPublicRoute) {
       return; // Allow public routes to render without auth checks
@@ -61,7 +62,7 @@ export function PageLayout({ children }: PageLayoutProps) {
   }, []);
 
   // Allow public routes to render without auth checks or layout
-  if (pathname && ["/login", "/register", "/reset-password"].some((route) => pathname.startsWith(route))) {
+  if (isSitePath(pathname) || (pathname && ["/login", "/register", "/reset-password"].some((route) => pathname.startsWith(route)))) {
     return <>{children}</>;
   }
 
