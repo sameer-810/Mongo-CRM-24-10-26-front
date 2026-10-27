@@ -40,6 +40,7 @@ export const ROUTES = {
 
 // Define which routes each role can access
 export const roleRoutes: Record<UserRole, string[]> = {
+  super_admin: [ROUTES.DASHBOARD, ROUTES.LEADS, ROUTES.USERS, ROUTES.DOCUMENT_REMINDERS],
   admin: [
     ROUTES.DASHBOARD,
     ROUTES.LEADS,

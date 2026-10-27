@@ -105,7 +105,8 @@ export type UserRole =
   | "manager"
   | "advisor"
   | "telecaller"
-  | "processing";
+  | "processing"
+  | "super_admin";
 
 export interface User {
   id: string;

@@ -5,7 +5,8 @@ export type UserRole =
   | "manager"
   | "telecaller"
   | "advisor"
-  | "processing";
+  | "processing"
+  | "super_admin";
 
 export type CallStatus =
   | "connected"
@@ -330,6 +331,7 @@ export const DOCUMENT_CATEGORY_LABELS: Record<DocumentCategory, string> = {
 };
 
 export const ROLE_LABELS: Record<UserRole, string> = {
+  super_admin: "Super Admin",
   admin: "Admin",
   manager: "Manager",
   telecaller: "Telecaller",

@@ -78,10 +78,11 @@ export async function middleware(request: NextRequest) {
 
       // Check if user has access to this route based on role
       if (!canAccessRoute(userRole, pathname)) {
-        // Redirect to default route for their role
+        // Redirect to default route for their role; never to the page just denied (ERR_TOO_MANY_REDIRECTS)
         const defaultRoute = getDefaultRoute(userRole);
-        const redirectUrl = new URL(defaultRoute, request.url);
-        return NextResponse.redirect(redirectUrl);
+        if (defaultRoute !== pathname) {
+          return NextResponse.redirect(new URL(defaultRoute, request.url));
+        }
       }
     } catch (error) {
       // If token parsing fails, redirect to login
