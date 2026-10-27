@@ -46,7 +46,7 @@ export function Header({
   onToggleCollapse,
   isCollapsed,
 }: HeaderProps) {
-  const { user, logout } = useAuth();
+  const { user, logout, isSuperAdmin } = useAuth();
   const { reminders, pendingCount } = useReminders();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
@@ -240,7 +240,7 @@ export function Header({
                 <div className="hidden sm:flex flex-col items-start text-sm">
                   <span className="font-medium">{user?.name}</span>
                   <span className="text-xs text-muted-foreground capitalize">
-                    {user?.role}
+                    {isSuperAdmin ? "Super Admin" : user?.role}
                   </span>
                 </div>
               </Button>

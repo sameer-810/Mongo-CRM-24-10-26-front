@@ -9,6 +9,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<boolean>;
   logout: () => void;
   isLoading: boolean;
+  isSuperAdmin: boolean;
   hasPermission: (permission: string) => boolean;
 }
 
@@ -17,6 +18,10 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const { data: session, status } = useSession();
   const router = useRouter();
+
+  // The platform Super Admin passes every admin check in the UI, mirroring the backend's role middleware.
+  const isSuperAdmin = session?.user?.role === "super_admin";
+  const user = session?.user ? (isSuperAdmin ? { ...session.user, role: "admin" } : session.user) : null;
 
   useEffect(() => {
     if (session?.error === "RefreshAccessTokenError") {
@@ -48,7 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   const hasPermission = (permission: string): boolean => {
-    if (!session?.user) return false;
+    if (!user) return false;
 
     // Define role-based permissions
     const rolePermissions: Record<string, string[]> = {
@@ -85,8 +90,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       processing: ["canViewDashboard"],
     };
 
-    const userRole = session.user.role as string;
-    const permissions = rolePermissions[userRole] || [];
+    const permissions = rolePermissions[user.role as string] || [];
 
     return permissions.includes(permission);
   };
@@ -94,10 +98,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider
       value={{
-        user: session?.user || null,
+        user,
         login,
         logout,
         isLoading: status === "loading",
+        isSuperAdmin,
         hasPermission,
       }}
     >
