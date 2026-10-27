@@ -1,4 +1,4 @@
-# CRM Baker Frontend
+# FiveM CRM Frontend
 
 Next.js 15 CRM with role-based access, lead/call management, and dashboards.
 
@@ -19,12 +19,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment (.env.local)
 
-```env
-NEXTAUTH_SECRET=<secret>
-NEXTAUTH_URL=http://localhost:3000
-BACKEND_API_URL=http://localhost:8000
-BACKEND_API_SECRET=<api-secret>
-```
+See `.env.example`. `NEXTAUTH_URL` must be a single URL. The `NEXT_PUBLIC_*` branding vars (site name, company, user email domain, contact email) are baked in at build time, so redeploy after changing them.
 
 ## Scripts
 

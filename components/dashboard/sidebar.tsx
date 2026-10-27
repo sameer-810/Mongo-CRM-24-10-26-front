@@ -27,6 +27,7 @@ import { UserRole } from "@/lib/types";
 import { useLeadStore } from "@/lib/store/use-lead-store";
 import { useReminderStore } from "@/lib/store/use-reminder-store";
 import { getInitials } from "@/lib/format-utils";
+import { SITE } from "@/lib/site";
 
 // interface NavItem {
 //   title: string;
@@ -261,7 +262,7 @@ export function Sidebar({ isOpen, onClose, isCollapsed }: SidebarProps) {
                   <div className="absolute -inset-1 bg-primary/20 rounded-lg blur opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img
                     src="/logo.png"
-                    alt="Baker & Co. Associates"
+                    alt={SITE.company}
                     className="relative w-48 h-auto drop-shadow-sm dark:drop-shadow-none"
                   />
                 </div>

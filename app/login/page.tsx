@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { ForgotPasswordModal } from "@/components/auth/forgot-password-modal"
 import { useToast } from "@/hooks/use-toast"
+import { SITE } from "@/lib/site"
 import { Building2, Lock, Mail, TrendingUp, Users, BarChart3, CheckCircle2, Eye, EyeOff } from "lucide-react"
 
 export default function LoginPage() {
@@ -68,7 +69,7 @@ export default function LoginPage() {
         </div>
         <div className="flex items-center gap-3 mb-8">
           <div className="flex flex-col gap-2 mb-8">
-            <img src="/logo.png" alt="Baker & Co. Associates" className="w-80 h-auto" />
+            <img src="/logo.png" alt={SITE.company} className="w-80 h-auto" />
           </div>
         </div>
         <div className="relative z-10 flex justify-center items-center flex-col h-full">
@@ -100,7 +101,7 @@ export default function LoginPage() {
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">Welcome back to baker and co</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Welcome back to FiveM</h2>
             <p className="text-muted-foreground">Enter your credentials to access your account</p>
           </div>
 

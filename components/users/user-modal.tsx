@@ -35,6 +35,7 @@ import {
 } from "lucide-react";
 import { userRoleConfig } from "@/lib/badge-configs";
 import { cn } from "@/lib/utils";
+import { SITE } from "@/lib/site";
 
 interface UserModalProps {
   isOpen: boolean;
@@ -43,7 +44,7 @@ interface UserModalProps {
   onSuccess?: () => void;
 }
 
-const DOMAIN = "@bakerandco.ae";
+const DOMAIN = `@${SITE.emailDomain}`;
 
 export default function UserModal({
   isOpen,

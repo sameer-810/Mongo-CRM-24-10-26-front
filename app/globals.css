@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Baker & Co. Light Mode Colors */
+  /* FiveM. Light Mode Colors */
   --background: oklch(0.99 0.003 85); /* Soft, neutral creamy off-white - easy on the eyes */
   --foreground: oklch(0.15 0 0); /* #1A1A1A - Main text */
   
@@ -14,7 +14,7 @@
   --popover: oklch(1 0 0); /* Pure white - clean popover surface */
   --popover-foreground: oklch(0.15 0 0); /* #1A1A1A */
   
-  --primary: oklch(0.87 0.08 95); /* #E8D68A - Baker & Co. Gold */
+  --primary: oklch(0.87 0.08 95); /* #E8D68A - FiveM. Gold */
   --primary-foreground: oklch(0.15 0 0); /* Dark text on gold */
   
   --secondary: oklch(0.3 0.04 255); /* #2C3E50 - Dark blue-gray */
@@ -50,7 +50,7 @@
   --sidebar-border: oklch(0.93 0.002 85); /* Soft, subtle border - matches main border */
   --sidebar-ring: oklch(0.87 0.08 95); /* Gold */
   
-  /* Additional Baker & Co. specific colors - Professional & Subtle */
+  /* Additional FiveM. specific colors - Professional & Subtle */
   --success: oklch(0.55 0.12 150); /* Muted teal-green */
   --warning: oklch(0.68 0.14 65); /* Softer amber (good for telecaller) */
   --error: oklch(0.55 0.15 15); /* Professional rose-red */
@@ -70,7 +70,7 @@
 }
 
 .dark {
-  /* Baker & Co. Dark Mode Colors */
+  /* FiveM. Dark Mode Colors */
   --background: oklch(0.22 0 0); /* #2D2D2D - Charcoal background */
   --foreground: oklch(0.99 0 0); /* #F9FAFB - Light text */
   
@@ -80,7 +80,7 @@
   --popover: oklch(0.27 0 0); /* #3A3A3A */
   --popover-foreground: oklch(0.99 0 0); /* #F9FAFB */
   
-  --primary: oklch(0.87 0.08 95); /* #E8D68A - Baker & Co. Gold (same) */
+  --primary: oklch(0.87 0.08 95); /* #E8D68A - FiveM. Gold (same) */
   --primary-foreground: oklch(0.22 0 0); /* Dark text on gold */
   
   --secondary: oklch(0.92 0 0); /* #E5E7EB - Light gray for dark mode */
@@ -114,7 +114,7 @@
   --sidebar-border: oklch(0.35 0 0); /* #4B5563 */
   --sidebar-ring: oklch(0.87 0.08 95); /* Gold */
   
-  /* Additional Baker & Co. specific colors - Professional & Subtle (Dark Mode) */
+  /* Additional FiveM. specific colors - Professional & Subtle (Dark Mode) */
   --success: oklch(0.65 0.12 155); /* Muted teal-green */
   --warning: oklch(0.75 0.13 70); /* Softer amber */
   --error: oklch(0.62 0.14 15); /* Professional rose-red */

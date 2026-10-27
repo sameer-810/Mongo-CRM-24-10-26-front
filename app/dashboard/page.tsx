@@ -40,6 +40,7 @@ import { getAdminAndManagerDashboardData } from "@/lib/server-actions";
 import { GetAdminAndManagerDashboardStatsResponseType } from "@/lib/types";
 import { toast } from "sonner";
 import { Skeleton } from "@/components/ui/skeleton";
+import { SITE } from "@/lib/site";
 
 // Types for chart data
 interface LeadsDataPoint {
@@ -257,7 +258,7 @@ export default function DashboardPage() {
     <div className="space-y-8 animate-fade-in p-6 md:p-8 max-w-[1600px] mx-auto">
       {/* Header Section */}
       <PageHeader
-        title="Welcome back to Bakers CRM,"
+        title={`Welcome back to ${SITE.name},`}
         highlightedText={user?.name || "User"}
         description="Here's what's happening with your projects today."
       /* action={

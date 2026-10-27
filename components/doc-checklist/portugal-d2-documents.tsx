@@ -88,7 +88,7 @@ export const PORTUGAL_D2_CHECKLIST: ChecklistTemplate = {
       title: "",
       items: [],
       guidance: {
-        intro: "Baker and Co Associates will guide you with the below requirements",
+        intro: "FiveM will guide you with the below requirements",
         bullets: [
           "NIF (Personal TAX-Number)",
           "Portugal Company Incorporation",
