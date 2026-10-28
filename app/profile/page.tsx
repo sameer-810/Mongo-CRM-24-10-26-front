@@ -2,9 +2,10 @@ import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/auth-config";
 import { ProfileForm } from "@/components/profile/profile-form";
+import { SITE } from "@/lib/site";
 
 export const metadata = {
-  title: "Profile | CRM",
+  title: `Profile | ${SITE.name}`,
   description: "Manage your profile and settings",
 };
 

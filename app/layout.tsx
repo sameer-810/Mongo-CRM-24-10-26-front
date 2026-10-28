@@ -6,6 +6,7 @@ import { Providers } from "@/components/providers";
 import { PageLayout } from "@/components/layouts/page-layout";
 import { ReminderAlerts } from "@/components/reminders/reminder-alerts";
 import { Toaster } from "@/components/ui/toaster";
+import { SITE } from "@/lib/site";
 import "./globals.css";
 
 if (typeof window === "undefined") {
@@ -32,7 +33,7 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "CRM Dashboard",
+  title: SITE.name,
   description: "Professional CRM System with Role-Based Access Control",
   icons: {
     icon: '/favicon.png',

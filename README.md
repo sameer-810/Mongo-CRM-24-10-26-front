@@ -1,4 +1,4 @@
-# FiveM CRM Frontend
+# FiveM Infotech CRM Frontend
 
 Next.js 15 CRM with role-based access, lead/call management, and dashboards.
 

@@ -4,6 +4,7 @@ import { useEffect, useState, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ResetPasswordModal } from "@/components/auth/reset-password-modal";
 import { useToast } from "@/hooks/use-toast";
+import { SITE } from "@/lib/site";
 import { Building2, AlertCircle, Loader2 } from "lucide-react";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
@@ -50,7 +51,7 @@ function ResetPasswordContent() {
             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
               <Building2 className="w-7 h-7 text-primary-foreground" />
             </div>
-            <span className="text-2xl font-bold text-foreground">CRM Pro</span>
+            <span className="text-2xl font-bold text-foreground">{SITE.name}</span>
           </div>
           <div className="flex items-center justify-center py-8">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
@@ -69,7 +70,7 @@ function ResetPasswordContent() {
             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
               <Building2 className="w-7 h-7 text-primary-foreground" />
             </div>
-            <span className="text-2xl font-bold text-foreground">CRM Pro</span>
+            <span className="text-2xl font-bold text-foreground">{SITE.name}</span>
           </div>
 
           <Alert variant="destructive">
@@ -102,7 +103,7 @@ function ResetPasswordContent() {
           <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
             <Building2 className="w-7 h-7 text-primary-foreground" />
           </div>
-          <span className="text-2xl font-bold text-foreground">CRM Pro</span>
+          <span className="text-2xl font-bold text-foreground">{SITE.name}</span>
         </div>
 
         {token && (
@@ -128,7 +129,7 @@ export default function ResetPasswordPage() {
                 <Building2 className="w-7 h-7 text-primary-foreground" />
               </div>
               <span className="text-2xl font-bold text-foreground">
-                CRM Pro
+                {SITE.name}
               </span>
             </div>
             <div className="flex items-center justify-center py-8">

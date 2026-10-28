@@ -14,7 +14,7 @@ export type ChecklistSection = {
   items: ChecklistItem[];
   /** Render section title with underline */
   titleUnderline?: boolean;
-  /** Intro line + bullet list (e.g. FiveM guidance) */
+  /** Intro line + bullet list (e.g. FiveM Infotech guidance) */
   guidance?: { intro: string; bullets: string[] };
   /** Single line below section heading (e.g. bold + underlined instruction) */
   sectionNote?: string;

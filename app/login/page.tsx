@@ -97,11 +97,11 @@ export default function LoginPage() {
             <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center">
               <Building2 className="w-7 h-7 text-primary-foreground" />
             </div>
-            <span className="text-2xl font-bold text-foreground">CRM Pro</span>
+            <span className="text-2xl font-bold text-foreground">{SITE.name}</span>
           </div>
 
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">Welcome back to FiveM</h2>
+            <h2 className="text-3xl font-bold tracking-tight">Welcome back to {SITE.company}</h2>
             <p className="text-muted-foreground">Enter your credentials to access your account</p>
           </div>
 

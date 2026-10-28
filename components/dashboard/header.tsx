@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuth } from "@/contexts/auth-context";
+import { SITE } from "@/lib/site";
 import { useReminders } from "@/contexts/reminder-context";
 import { Button } from "@/components/ui/button";
 import {
@@ -130,7 +131,7 @@ export function Header({
           </Button>
 
           <h2 className="text-lg font-semibold hidden sm:block">
-            CRM Dashboard
+            {SITE.name}
           </h2>
         </div>
 

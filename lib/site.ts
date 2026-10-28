@@ -2,8 +2,8 @@ const emailDomain = process.env.NEXT_PUBLIC_EMAIL_DOMAIN || "bakerandco.ae";
 
 /** Branding comes from NEXT_PUBLIC_* env vars (baked in at build time); redeploy after changing them. */
 export const SITE = {
-  name: process.env.NEXT_PUBLIC_SITE_NAME || "FiveM CRM",
-  company: process.env.NEXT_PUBLIC_COMPANY_NAME || "FiveM",
+  name: process.env.NEXT_PUBLIC_SITE_NAME || "FiveM Infotech CRM",
+  company: process.env.NEXT_PUBLIC_COMPANY_NAME || "FiveM Infotech",
   emailDomain,
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || `info@${emailDomain}`,
   lastUpdated: "27 October 2026",
